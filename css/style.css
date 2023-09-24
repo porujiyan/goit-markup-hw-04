@@ -1,0 +1,322 @@
+/* --- Color Scheme --- */
+:root {
+  --color-iris: #4d5ae5;
+  --color-ocean: #404bbf;
+  --color-navyblue: #2e2f42;
+  --color-green: #31d0aa;
+  --color-slate: #434455;
+  --color-lightslate: #8e8f99;
+  --color-cornflower: #e7e9fc;
+  --color-cloud: #f4f4fd;
+  --color-modal: #abacb3;
+  --color-grey: #808080;
+  --color-white: #ffffff;
+  --color-dairy: #fcfcfc;
+
+  --shadow-text: #00000040;
+  --shadow-box: #00000026;
+
+  --shadow-side: #2e2f4214;
+  --shadow-bottom: #2e2f4229;  
+}
+
+/* ---- Typography ---- */
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .32px;
+  color: var(--color-navyblue);
+}
+/* ---- Typography ---- */
+
+.container,
+.section {
+  width: 1158px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ---- List Style ---- */
+.navigation-list,
+.address-list,
+.section-list,
+.filter-list,
+.portfolio-list {
+  list-style: none;
+}
+
+/* .section-list-item p {
+  width: 264px;
+} */
+/* ---- List Style ---- */
+
+/* ---- Link Style ---- */
+.navigation-list-link {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--color-navyblue);
+}
+
+/*.navigation-list-item:active {
+  color: var(--color-ocean);
+}*/
+
+.address-list-link {
+  text-decoration: none;
+  font-style: normal;
+  color: var(--color-slate);
+}
+
+.navigation-list-link:hover,
+.navigation-list-link:focus,
+.navigation-list-link:active,
+.address-list-link:hover,
+.address-list-link:focus,
+.address-list-link:active {
+  color: var(--color-ocean);
+}
+/* ---- Link Style ---- */
+
+/* ---- Logo Style ---- */
+.logo {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.166667;
+  letter-spacing: .54px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header    {color: var(--color-navyblue);}
+
+.footer    {color: var(--color-cloud);}
+
+.logo-span {color: var(--color-iris);}
+/* ---- Logo Style ---- */
+
+/* --- Header Style --- */
+.body-header {
+  display: flex;
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.navigation-list {
+  display: inline-flex;
+  /* flex-direction: row;
+  justify-content: center; */
+  align-items: center;
+  /* margin-left: 76px;
+  margin-right: 332px; */
+  gap: 40px;
+}
+
+.address-list {
+  display: inline-flex;
+  /* flex-direction: row; */
+  /* justify-content: flex-start;
+  align-items: center; */
+  gap: 40px;
+}
+/* --- Header Style --- */
+
+.section-list {
+  display: inline-flex;
+  padding-bottom: 0px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+/* --- Hero Section --- */
+.hero {
+  background: var(--color-navyblue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-title {
+  color: var(--color-white);
+  text-align: center;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.071429;
+  letter-spacing: .32px;
+  width: 496px;
+  text-shadow: 0px 4px 4px var(--shadow-text);
+}
+
+.order-services {
+  display: inline-flex;
+  padding: 16px 32px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 4px;
+  background: var(--color-iris);
+  box-shadow: 0px 4px 4px 0px var(--shadow-box);
+  border: none;
+
+  text-align: center;
+  color: var(--color-white);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  letter-spacing: .64px;
+}
+
+.order-services:hover { background-color: var(--color-ocean); }
+
+.order-services:active { background: var(--color-iris); }
+
+/*.button-order-text {
+  text-align: center;
+  color: var(--color-white);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  letter-spacing: .64px;
+}*/
+/* --- Hero Section --- */
+
+/* - Service  Section - */
+.service {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* - Service  Section - */
+
+/* - Feature  Section - */
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* - Feature  Section - */
+
+
+/* --- Team Section --- */
+.team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-cloud);
+  box-shadow: 0px 4px 4px 0px var(--shadow-box);
+}
+
+.section-header {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.111111;
+  letter-spacing: .72px;
+  text-transform: capitalize;
+}
+
+.section-list-team {
+  border-radius: 0px 0px 4px 4px;
+  background: var(--color-white);
+  box-shadow: 0px 2px 1px 0px var(--shadow-side),
+              0px 1px 1px 0px var(--shadow-bottom),
+              0px 1px 6px 0px var(--shadow-side);
+  text-align: center;
+}
+/* --- Team Section --- */
+
+/* Portfolio Navigation */
+.portfolio-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.portfolio {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.filter-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.filter {
+  display: flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--color-cornflower);
+  background: var(--color-cloud);
+  color: var(--color-iris);
+}
+
+.button-filter-text {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  letter-spacing: .64px;
+}
+
+.filter:hover,
+.filter:focus {
+  background: var(--color-ocean);
+  color: var(--color-white);
+}
+
+.filter:active {
+  background: var(--color-cloud);
+  color: var(--color-iris);
+}
+
+.portfolio-list {
+  display: flex;
+  padding-bottom: 0px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+/* Portfolio Navigation */
+
+/* --- Footer Style --- */
+.body-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: var(--color-navyblue);
+  padding: 100px 0;
+}
+
+.footnote {
+  color: var(--color-cloud);
+  /* width: 264px; */
+  letter-spacing: .32px;
+}
+/* --- Footer Style --- */
+
+/* --- Button Style --- */
+.button {
+  cursor: pointer;
+}
+/* --- Button Style --- */
