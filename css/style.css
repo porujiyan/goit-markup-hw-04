@@ -3,6 +3,7 @@
   --iris: #4d5ae5;
   --ocean: #404bbf;
   --navyblue: #2e2f42;
+  --navyblue-modal: #2e2f4266;
   --green: #31d0aa;
   --slate: #434455;
   --lightslate: #8e8f99;
@@ -24,6 +25,12 @@
   --filter-one: #0000001f;
   --filter-two: #00000014;
   --filter-three: #0000001a;
+
+  --shadow-modal-one: #00000033;
+  /* --shadow-modal-two: #00000033; filter one*/
+  --shadow-modal-three: #00000024;
+
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* --- Color Scheme --- */
 
@@ -137,6 +144,28 @@ ul {
   color: var(--navyblue);
   font-weight: 500;
   text-decoration: none;
+  position: relative;
+  transition: color var(--animation);
+}
+
+.navigation-link:hover::after {
+  width: 100%;
+}
+
+.navigation-link::after {
+  content: '';
+  border-radius: 2px;
+  width: 0;
+  height: 4px;
+  background-color: var(--ocean);
+  position: absolute;
+  bottom: -27.5px;
+  left: 0;
+  transition: width var(--animation);
+}
+
+.navigation-active::after {
+  width: 100%;
 }
 
 .address-list {
@@ -150,6 +179,7 @@ ul {
   color: var(--slate);
   font-style: normal;
   text-decoration: none;
+  transition: color var(--animation);
 }
 
 .navigation-link:hover,
@@ -191,11 +221,11 @@ ul {
 
 .order-button {
 /* Button Style */
-  background: var(--iris);
+  background-color: var(--iris);
   border-radius: 4px;
   box-shadow: 0px 4px 4px 0px var(--shadow-box);
   padding: 16px 32px;
-  /* transition: all 0.1s ease-in-out; */
+  transition: background-color var(--animation);
 /* Text Style */
   color: var(--white);
   font-family: Roboto, sans-serif;
@@ -207,11 +237,66 @@ ul {
 
 .order-button:hover,
 .order-button:focus {
-  background: var(--ocean);
+  background-color: var(--ocean);
 }
 
-.order-button:active {
-  background: var(--iris);
+.backdrop {
+  background-color: var(--navyblue-modal);
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity var(--animation);
+}
+
+.backdrop.conceal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 408px;
+  min-height: 584px;
+  background-color: var(--dairy);
+  box-shadow: 0px 2px 1px 0px var(--shadow-modal-one),
+              0px 1px 3px 0px var(--filter-one),
+              0px 1px 1px 0px var(--shadow-modal-three);;
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--animation);
+}
+
+.modal-close {
+  background-color: var(--cornflower);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: var(--navyblue);
+  border: 1px solid var(--navyblue-modal);
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  transition: color var(--animation),
+              background-color var(--animation),
+              border-color var(--animation);
+}
+
+.modal-close-icon {
+  width: 8px;
+  height: 10px;
+  fill: currentColor;
+}
+
+.modal-close:hover {
+  color: var(--cloud);
+  background-color: var(--ocean);
+  border-color: var(--ocean);
 }
 /* Hero Section */
 
@@ -328,6 +413,7 @@ ul {
   align-items: center;
   justify-content: center;
   background-color: var(--iris);
+  transition: background-color var(--animation);
 }
 
 .team-socmed-item:hover,
@@ -370,11 +456,13 @@ ul {
   height: 88px;
   border-radius: 4px;
   border: 1px solid var(--lightslate);
+  transition: border var(--animation);
 }
 
 .customer-icon {
   width: auto;
   fill: var(--lightslate);
+  transition: fill var(--animation);
 }
 
 .customer-item:hover,
@@ -431,11 +519,12 @@ ul {
   align-items: center;
   justify-content: center;
   background-color: var(--iris);
+  transition: background-color var(--animation);
 }
 
 .footer-socmed-item:hover,
 .footer-socmed-item:focus {
-  background: var(--green);
+  background-color: var(--green);
 }
 
 .footer-socmed-icon {
@@ -472,13 +561,16 @@ ul {
   font-weight: 500;
   line-height: 24px;
   letter-spacing: .64px;
+  transition: background-color var(--animation),
+              border var(--animation),
+              box-shadow var(--animation);
 }
 
 .filter-button:hover,
 .filter-button:focus {
 /* Button Style */
-  background: var(--ocean);
-  border: none;
+  background-color: var(--ocean);
+  border: 1px solid var(--ocean);
   box-shadow: 0px 2px 2px 0px var(--filter-one),
               0px 2px 1px 0px var(--filter-two),
               0px 3px 1px 0px var(--filter-three);
@@ -499,6 +591,7 @@ ul {
   display: flex;
   flex-direction: column;
   background: var(--white);
+  transition: box-shadow var(--animation);
 }
 
 .portfolio-item:hover,
